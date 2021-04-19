@@ -14,11 +14,11 @@ WORKDIR /app
 # But, let it be for this one
 RUN git clone https://github.com/miracleanupam/djangodemo.git
 RUN mv djangodemo/* .
-RUN python manage.py migrate
-RUN python manage.py createsuperuser --noinput
-RUN python manage.py init-users
 
 RUN pip install -r requirements.txt
+
+RUN chmod +x entrypoint.sh
+RUN ./entrypoint.sh
 
 EXPOSE 8000
 
