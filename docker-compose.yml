@@ -26,7 +26,7 @@ services:
       - "db:db"
 #    networks:
 #      - docnet
-    command: "python manage.py runserver 0.0.0.0:8000"
+    command: "./entrypoint.sh"
 #networks:
 #  docnet:
 #    external: true
