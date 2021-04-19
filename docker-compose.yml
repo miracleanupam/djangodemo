@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    restart: always
+    ports:
+    - '3306:3308'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'nimda'
+      MYSQL_DATABASE: 'ecom'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'nimda'
+    expose:
+      - "3306"
+  web:
+    build: .
+    restart: on-failure
+    ports:
+    - '8000:8000'
+    depends_on:
+      - db
+    links:
+      - db:db
+    command: "python manage.py runserver 0.0.0.0:8000"
