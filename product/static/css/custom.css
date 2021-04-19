@@ -1,0 +1,29 @@
+.card-img-top {
+    width: 18rem;
+    height: 18rem;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.container-fluid {
+    margin-top: 2rem;
+}
+
+.search-comp {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.card {
+    margin: 0.5rem;
+}
+
+.pagination {
+    margin-top: 1rem;
+}
+
+.step-links {
+    margin: auto;
+}

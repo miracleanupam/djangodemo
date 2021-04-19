@@ -1,0 +1,24 @@
+<div class="card" style="width: 18rem;" xmlns="http://www.w3.org/1999/html">
+  <img src="{{ prod.image.url }}" class="card-img-top" width="100%" alt="{{ prod.product_code }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ prod.name }}</h5>
+    <p class="card-text">{{ prod.description }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Code: {{ prod.product_code }}</li>
+    <li class="list-group-item">Price: ${{ prod.price }}</li>
+{#    <li class="list-group-item">A third item</li>#}
+  </ul>
+  <div class="card-body">
+    {% if prod in cart.items.all %}
+    <button id="btn-prod-{{ prod.pk }}-remove" onclick="removeFromCart({{ prod.pk }})" class="btn btn-info">Remove from Cart</button>
+    <button id="btn-prod-{{ prod.pk }}-add" onclick="addToCart({{ prod.pk }})" style="display: none" class="btn btn-info">Add to Cart</button>
+    {% else %}
+    <button id="btn-prod-{{ prod.pk }}-remove" onclick="removeFromCart({{ prod.pk }})" style="display: none" class="btn btn-info">Remove from Cart</button>
+    <button id="btn-prod-{{ prod.pk }}-add" onclick="addToCart({{ prod.pk }})" class="btn btn-info">Add to Cart</button>
+    {% endif %}
+    {% if is_list_view %}
+    <a href="{% url 'product-detail' prod.pk %}" class="btn btn-info">Details</a>
+    {% endif %}
+  </div>
+</div>
