@@ -16,7 +16,7 @@ There are two ways to run the application.
 - Enter 0.0.0.0:8000 on a browser
   
 ### 2. With `docker-compose`
-- Download the `docker-compose.yml` file
+- Clone the repo
 - Run the following command
     ```
     docker-compose up
@@ -45,3 +45,6 @@ superuser so far.
 3. Now go to homepage
 
 A normal use can be used to test the functionality of the app.
+
+## Demo
+[Demo of this site can be found here](https://djangodemoanupam.herokuapp.com/)
