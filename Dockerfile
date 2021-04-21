@@ -12,9 +12,10 @@ WORKDIR /app
 # Generally a good way is to combine all the RUN commands into one so that
 # If any command changes, the layer with the command is over-ridden
 # But, let it be for this one
-RUN git clone https://github.com/miracleanupam/djangodemo.git
-RUN mv djangodemo/* .
+#RUN git clone https://github.com/miracleanupam/djangodemo.git
+#RUN mv djangodemo/* .
 
+COPY . .
 RUN pip install -r requirements.txt
 
 RUN chmod +x entrypoint.sh

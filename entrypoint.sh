@@ -7,7 +7,7 @@
 # When the web container is already up and trying to connect
 # So wait for 10 secs and try to run the commands
 
-sleep 10
+sleep 30
 
 python manage.py migrate
 python manage.py createsuperuser --noinput

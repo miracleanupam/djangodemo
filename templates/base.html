@@ -31,6 +31,11 @@
           <li>
               <a id="nav-cart-info" class="nav-link" href={% url 'cart-detail' %}>Your cart total: {{ cart.total }}</a>
           </li>
+        {% if user.is_superuser %}
+            <li class="nav-item">
+              <a class="nav-link" href={% url 'add-product' %}>Add Product</a>
+            </li>
+        {% endif %}
         </ul>
         <form class="form-inline my-2 my-lg-0" action="{% url 'dashboard' %}">
             {{ sort_by }}
